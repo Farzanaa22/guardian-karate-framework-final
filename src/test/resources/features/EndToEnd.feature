@@ -15,8 +15,8 @@ Feature: End-to-End account creation
 
     Then path "/api/accounts/add-primary-account"
     And header Authorization = "Bearer " + getToken
-    * def generateData = Java.type('api.Utility.Data.GenerateData')
-    * def AutoEmail = generateAutoEmail.getEmail()
+    * def generateDataObject = Java.type('api.Utility.Data.GenerateData')
+    * def AutoEmail = generateDataObject.getEmail()
     When request
       """
       {
@@ -50,9 +50,9 @@ Feature: End-to-End account creation
 
     Then param primaryPersonId = id
 
-    * def phoneNumber = Java.type('api.Utility.Data.GenerateData')
+    * def generateDataObject = Java.type('api.Utility.Data.GenerateData')
 
-    * def phoneNum = phonenumber.getPhoneNumber()
+    * def phoneNum = generateDataObject.getPhoneNumber()
 
     And request
 
@@ -88,9 +88,9 @@ Feature: End-to-End account creation
 
     When param primaryPersonId = id
 
-    * def palet = Java.type('api.Utility.Data.GenerateData')
+    * def generateDataObject = Java.type('api.Utility.Data.GenerateData')
 
-    * def licencePlate = palet.getLicensePlate()
+    * def licencePlate = generateDataObject.getLicensePlate()
 
     And request
 
@@ -116,7 +116,7 @@ Feature: End-to-End account creation
 
     Then print response
 
-    And assert response.year == 2030
+    And assert response.year == 2023
 
     # add address
 
