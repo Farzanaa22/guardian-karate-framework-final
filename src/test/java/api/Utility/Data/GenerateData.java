@@ -31,6 +31,21 @@ public class GenerateData {
 		return phoneNumber;	
 	}
 	
+	
+	public static String getLicensePlate() {
+
+        String prefix = "xyz";
+
+        String suffix = "abc";
+
+        int random = (int)(Math.random()*10000);
+
+        String licensePlate  = prefix + random + suffix;
+
+        return licensePlate;
+
+    }
+	
 	public static void main(String [] args) {
 		String number = getPhoneNumber();
 		System.out.println(number);
