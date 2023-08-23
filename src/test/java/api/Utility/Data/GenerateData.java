@@ -51,5 +51,14 @@ public class GenerateData {
 		System.out.println(number);
 		System.out.println(number.length());
 	}
+	
+	public static String getUsername() {
+		String prefix ="auto_user";
+		int random =(int)(Math.random()*10000);
+		return prefix.concat(String.valueOf(random));
+	}
+	
+	
+	
 
 }
